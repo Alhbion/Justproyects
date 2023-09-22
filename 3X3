@@ -1,0 +1,48 @@
+import random
+
+# Crear una matriz 3x3 con elementos aleatorios del 0 al 100
+matriz = [[random.randint(0, 100) for _ in range(3)] for _ in range(3)]
+
+# Función para calcular el promedio de los elementos en la matriz
+def calcular_promedio(matriz):
+    total = sum(sum(fila) for fila in matriz)
+    elementos = 3 * 3  # Tamaño de la matriz
+    return total / elementos
+
+# Función para calcular la suma de los elementos en la matriz
+def calcular_suma(matriz):
+    return sum(sum(fila) for fila in matriz)
+
+# Función para encontrar el elemento mayor en la matriz
+def encontrar_elemento_mayor(matriz):
+    mayor = matriz[0][0]
+    for fila in matriz:
+        for elemento in fila:
+            if elemento > mayor:
+                mayor = elemento
+    return mayor
+
+# Función para encontrar el elemento menor en la matriz
+def encontrar_elemento_menor(matriz):
+    menor = matriz[0][0]
+    for fila in matriz:
+        for elemento in fila:
+            if elemento < menor:
+                menor = elemento
+    return menor
+
+# Función para mostrar los elementos de la diagonal principal
+def mostrar_diagonal_principal(matriz):
+    diagonal = [matriz[i][i] for i in range(3)]
+    return diagonal
+
+# Imprimir la matriz y los resultados
+print("Matriz:")
+for fila in matriz:
+    print(fila)
+
+print(f"Promedio de los elementos: {calcular_promedio(matriz)}")
+print(f"Suma de los elementos: {calcular_suma(matriz)}")
+print(f"Elemento mayor: {encontrar_elemento_mayor(matriz)}")
+print(f"Elemento menor: {encontrar_elemento_menor(matriz)}")
+print(f"Elementos de la diagonal principal: {mostrar_diagonal_principal(matriz)}")
