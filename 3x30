@@ -1,0 +1,10 @@
+# Crear una matriz 3x3 inicializada con ceros
+matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+# Asignar los elementos 1, 2 y 3 en la diagonal principal
+for i in range(3):
+    matriz[i][i] = i + 1
+
+# Imprimir la matriz resultante
+for fila in matriz:
+    print(fila)
